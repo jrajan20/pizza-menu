@@ -49,10 +49,9 @@ const pizzaData = [
 function App() {
   return (
     <div> 
-      <h1>Pizza Menu</h1>
-      <Pizza/>
-      <Pizza/>
-      <Pizza/>
+     <Header/>
+      <Menu/>
+      <Footer/>
     </div>
    
   );
@@ -64,9 +63,42 @@ function Pizza(){
     <h2>Pizza Spinachi</h2>
     <p>Tomato, mozarella, spinach and ricotta cheese</p>
   </div>
-  )
+  );
+}
+function Header(){
+  return <h1>Joker's Pizza Company</h1>
 }
 
+function Footer(){
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+console.log(isOpen);
+  //   if(hour >= openHour && hour <= closeHour){
+//  alert("We're currently Open!") }
+//  else {
+//   alert("Sorry, We are closed!")
+//   }
+   
+
+  return (
+    <footer>{}. We are currently open!</footer>
+  );
+}
+
+
+function Menu(){
+return(
+  <div>
+    <h2>Our Menu</h2>
+    <Pizza/>
+    <Pizza/>
+    <Pizza/>
+
+  </div>
+);
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
